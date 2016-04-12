@@ -1,0 +1,34 @@
+# Permalinks
+permalink:        pretty
+
+# Setup
+url:              http://qwtel.com
+
+# Set to '' in case of hosting on `http://<your-github-name>.github.io`
+# baseurl:          /hydejack
+baseurl:          
+
+title:            LouisGan 
+
+# Markdown enabled, however don't use more than one paragraph (enforced by `>`)
+description:      >
+  因为好多公司招聘程序员，都要求程序员有自己的博客，或者github开源项目，所以我就用github page做了这个博客站点，写点东西，方便以后面试找工作. 
+
+# The tags listed as entries in the sidebar
+# sidebar_tags:     [jekyll, hyde]
+sidebar_tags:     [index, html, css, javascript, nodeJS]
+
+# Fallback image and color if not overwritten for tag or post
+# image:            /hydejack/public/img/nap.jpg
+image:            /public/img/nap.jpg
+color:            '#A85641'
+
+author:
+  name:           'Louis Gan'
+  github:         ganpeng
+  photo:          /public/img/tj.png
+
+  # Markdown enabled, can use multiple paragraphs (enabled by `|`)
+  about:          |
+    我叫 甘鹏 88年的程序员，10年毕业于兰州理工大学，毕业后从事化学方面的工作，后来脑子一热，毅然决然辞职，励志要成为一个像“ TJholywaychuk “这样的低调且牛逼的程序员...
+    

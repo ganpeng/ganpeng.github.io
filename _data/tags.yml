@@ -1,0 +1,53 @@
+# Add an entry, where the key represents a slug.
+# Provide at least a `name` value and optionally `image`, `color` and `description`.
+# Markdown is enabled for `description`, however don't use more than one paragraph (enforced by `>`)
+#
+# Example:
+#
+# ~~~
+# mytag:
+#   name: My Tag
+#   description: >
+#     *My Tag* is an example of how to define a custom tag.
+# ~~~
+
+# hyde:
+#   name: Hyde
+#   image: /public/img/hyde.jpg
+#   color: '#949667'
+#   description: >
+#     Hyde is a brazen two-column Jekyll theme that pairs a prominent sidebar with uncomplicated content.
+#     It’s based on Poole, the Jekyll butler.
+
+# jekyll:
+#   name: Jekyll
+#   image: /public/img/jekyll.jpg
+#   color: '#949667'
+#   description: >
+#     Jekyll is a static site generator, an open-source tool for creating simple yet powerful websites of all shapes and sizes.
+html:
+  name: html 
+  image: /public/img/hyde.jpg
+  color: '#949667'
+  description: >
+    “ 大多数的你们都熟悉程序员的美德。它们有三点：懒，不耐烦，以及狂妄自大。 ”—— Larry Wall
+
+css:
+  name: css 
+  image: /public/img/jekyll.jpg
+  color: '#949667'
+  description: >
+    “ 今日的大多数软件很像埃及金字塔，由千百万砖头堆砌起来，层层相切，没有着整体的 结构，是由畜力和成千上万奴隶的力量建立起来的。 ”—— Alan Kay
+javascript:
+  name: javascript 
+  image: /public/img/hyde.jpg
+  color: '#949667'
+  description: >
+    “ 大部分好的程序员编程并不是为了钱或名望，而只是因为纯粹的乐趣。 ”—— Linus Torvalds
+
+nodeJS:
+  name: nodeJS 
+  image: /public/img/jekyll.jpg
+  color: '#949667'
+  description: >
+    “ 编程的时候， 总是想着那个维护你代码的人会是一个知道你住在哪儿的有暴力倾向的精 神病患者。 ”—— Martin Golding
