@@ -1,4 +1,10 @@
-# html5新标签元素总结
+---
+layout: post
+title:	html5新标签元素的用法总结 
+tags: [html]
+---
+
+<!-- # html5新标签元素总结 -->
 
 ###SEMANTICS（新的语义标签）
 ####1. section
