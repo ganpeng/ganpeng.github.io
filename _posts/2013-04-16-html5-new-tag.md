@@ -7,9 +7,11 @@ tags: [html]
 <!-- # html5新标签元素总结 -->
 
 ### SEMANTICS（新的语义标签）
+
 #### 1. section
 	<section> 标签定义文档中的节（section、区段）。比如章节、页眉、页脚或文档中的其他部分。
-示例：	
+	 
+示例：
 	
 	<section>
 	  <h1>Forest elephants</h1>    
