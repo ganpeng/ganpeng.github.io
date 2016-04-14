@@ -399,5 +399,150 @@ tags: [css]
 </div>	
 
 
+### 4: flex
+
+	flex 属性是一个简写属性，它具有定义一个可伸缩项目的能力。flex元素可以根据他们的flex-grow 因子拉伸以填充可用空间，或根据他们的 flex-shrink 因子收缩以防止溢出。
+	
+	/* 0 0 auto */
+	flex: none;
+	
+	/* 单值，没有单位的数字，是flex-grow */
+	flex: 2;
+	
+	/* 单值，有单位的，宽、高，是flex-basis */
+	flex: 10em;
+	flex: 30px;
+	flex: auto;
+	flex: content;
+	
+	/* 两个值：flex-grow | flex-basis */
+	flex: 1 30px;
+	
+	/* 两个值：flex-grow | flex-shrink */
+	flex: 2 2;
+	
+	/* 三个值：flex-grow | flex-shrink | flex-basis */
+	flex: 2 2 10%;
+	
+	/* 全局值 */
+	flex: inherit;
+	flex: initial;
+	flex: unset;
 
 
+示例： 
+
+	// css
+	#flex-container {
+		display: -webkit-flex;
+		display: flex;
+		-webkit-flex-direction: row;
+		flex-direction: row;
+	}
+	
+	#flex-container > .flex-item {
+		-webkit-flex: auto;
+		flex: auto;
+	}
+	
+	#flex-container > .raw-item {
+		width: 5rem;
+	}
+	
+	// html
+	
+	<div id="flex-container">
+	    <div class="flex-item" id="flex">Flex box (click to toggle raw box)</div>
+	    <div class="raw-item" id="raw">Raw box</div>
+	</div>
+	
+效果
+
+<div style="height:5rem;border:1px solid red;display:flex;display:-webkit-flex;">
+    <div style="flex:auto;-webkit-flex:auto;border:1px solid pink;">Flex box (click to toggle raw box)</div>
+    <div style="width:5rem;">Raw box</div>
+</div>
+
+
+### 5： flex-basis
+	flex-basis 指定了flex item在主轴方向上的初始大小。如果不使用box-sizing来改变盒模型的话，那么这个属性就决定了flex item的内容盒（content-box）的宽或者高（取决于主轴的方向）的尺寸大小。
+	
+	语法：
+	
+	flex-basis: 10em      /* <'width'> */
+	flex-basis: 3px       /* <'width'> */
+	flex-basis: auto      /* <'width'> */
+	flex-basis: content
+	
+	flex-basis: inherit
+	
+	<'width'>
+	width值可以是一个数字后面跟着绝对单位例如px,mm,pt;该值也可以是一个百分数，那么这个百分数就是相对于其父弹性盒容器的宽或者高（取决于主轴方向）。负值是不被允许的。
+	
+示例：
+
+	element { 
+	  flex-basis: 18em;
+	}
+
+### 6： flex-flow
+	flex-flow是一个简写的css属性，它由flex-direction(伸缩方向) 和 flex-wrap(是否强制换行)组成
+	
+示例：
+
+	element { 
+	  flex-flow: column-reverse wrap;            
+	}
+### 7： flex-grow
+	flex-grow CSS属性定义弹性盒子项（flex item）的拉伸因子。
+
+示例： 
+
+	element { 
+	  flex-grow: 3;
+	}
+	
+### 8: flex-shrink
+	flex-shrink 属性指定了flex item的收缩规则。
+	
+示例： 
+	
+	element { 
+	  flex-shrink: 3;
+	}
+	
+### 9： flex-wrap
+	语法：
+	flex-wrap: nowrap;
+	flex-wrap: wrap;
+	flex-wrap: wrap-reverse;
+	
+	/* Global values */
+	flex-wrap: inherit;
+	flex-wrap: initial;
+	flex-wrap: unset;
+	
+	
+示例：
+
+	element {
+	  flex-wrap: nowrap;
+	}
+		
+### 10 ： order
+	// html
+	<!DOCTYPE html>
+	<header>…</header>
+	<div id='main'>
+	   <article>…</article>
+	   <nav>…</nav>
+	   <aside>…</aside>
+	</div>
+	<footer>…</footer>
+	
+	//  css
+	
+	#main { display: flex; }
+	#main > article { flex:1;         order: 2; }
+	#main > nav     { width: 200px;   order: 1; }
+	#main > aside   { width: 200px;   order: 3; }
