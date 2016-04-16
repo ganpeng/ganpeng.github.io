@@ -63,6 +63,30 @@
 	[...str];  //  ["h", "e", "l", "l", "o"]
 </pre>
 
+#### 可遍历对象例子
+> String, Array, TypedArray, Map and Set 是所有内置可遍历对象， 因为它们的原型对象都有一个 @@iterator 方法.
+
+##### 自定义可遍历对象
+
+<pre>
+	var myIterator = {};
+	myIterator[Symbol.iterator] = function* () {
+		yield 1;
+		yield 2;
+		yield 3;
+	};
+	[...myIterator]; // [1, 2, 3]
+</pre>
+
+##### 接受可遍历对象的内置 APIs
+>
+* Map([iterator])
+* WeakMap([iterator])
+* Set([iterator])
+* WeakSet([iterator])
+* Promise.all([iterator])
+* Promise.race([iterator])
+* Array.from([iterator])
 
 
 
