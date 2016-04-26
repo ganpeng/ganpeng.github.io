@@ -22,6 +22,7 @@ tags: [javascript]
 > 第三个参数是可选的，该参数会影响到事件如何沿着DOM树向上传递;
 
 > <p style="color:red;">注意:</p>
+
 > <p style="color:green;">在监听器的内部实现中，触发事件的对象会维护一个列表，其中包含每个监听器对象。如果一个对象能够触发多种类型的事件，如mousedown,mouseup与mousemove，则它会为它可以触发的每一个事件类型维护一个监听器列表。每当其中的一个事件发生时，该对象就会遍历对应的列表并通知其中的每个对象什么时候事件发生了。</p>
 
 > 取消事件的监听的方法：
@@ -32,6 +33,7 @@ tags: [javascript]
 ### 鼠标位置
 
 > 每个鼠标事件有两个属性用于确定鼠标的当前位置：pageX和pageY，结合这两个属性以及canvas元素相对文件的偏移量，可以确定鼠标在canvas元素上的相对坐标。遗憾的是，并不是所有的浏览器都支持这两个属性，所以在这些情况下，可能要用到clientX和clientY。以下是获取鼠标位置的函数：
+
 > <pre>
   function captureMouse(ele) {
   let mouser = {
@@ -102,7 +104,7 @@ tags: [javascript]
   function onKeyboardEvent(e) {
     console.log(e.type);
 }
-
 window.addEventListener('keydown', onKeyboardEvent, false);
 window.addEventlistener('keyup', onKeyboardEvent, false);
 </pre>
+> 键盘码 ：keyCode属性包含一个代表按下的物理件的数字值;
