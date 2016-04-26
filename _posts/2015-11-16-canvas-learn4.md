@@ -4,7 +4,7 @@ title:	canvas-learn-3
 tags: [javascript]
 ---
 
-<h1 style="text-align:center;">动画中的三角学</h1>
+<h1 style="text-align:center;">动画中的三角学基础</h1>
 
 ## 弧度和角度
 
