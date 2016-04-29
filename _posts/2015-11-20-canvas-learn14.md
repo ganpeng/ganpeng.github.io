@@ -32,3 +32,17 @@ tags: [javascript]
 * lineCap : 用来控制线条的终点，属性值包含：butt, round, square,默认值为butt;
 * lineJoin : 决定两条相连的线段如何结合，或者连接线的弯头部分如何绘制，该属性值包含round, bevel, miter选项，默认为miter
 * miterLimit : 当lineJoin属性设置为miter时， 该属性可用于控制两条相交线外侧交点与内侧交点的距离，它必须是大于零的有限数，默认为0；
+
+### 使用lineTo与moveTo绘制路径
+
+> lineTo命令接受单个点作为参数：线段的终点；他会把起点和终点的信息保存在一个对象中。
+> canvas上下文总是持有一条唯一的当前路径，一条路径可以拥有零条或者多条子路径，每条子路径由一系列通过直线或者曲线相连的点构成，如果一条路径的起点和终点间首尾相连，那么这条路径称为闭合路径。调用context.beginPath()既表示你想开始绘制一条新的路径。一条路径只不过是构成一条线的一系列坐标位置，为了将它渲染到canvas上，需要调用context.stroke()方法。
+
+<pre>
+    context.beginPath();
+    moveTo(0, 0);
+    lineTo(100, 100);
+    context.stroke();
+</pre>
+
+> 上述代码表示，在canavs上画一条从左上角(0, 0)到(100, 100)的直线，在画完一条线后，这条线的终点将自动成为下一条线的起点，或者可以用context.moveTo方法为下一条线指定一个新的起点
