@@ -74,3 +74,69 @@ tags: [javascript]
     })
   }
 </pre>
+
+#### 创建多条曲线
+
+> 方法一：如下window.onload函数中的第一个for循环创建一个包含9个点的数组，每个点都是一个拥有x,y属性的对象，他们随机的放置在canvas上，开始一条新的路径，把画笔移动到第一个点的位置。接下来的for循环从1开始以2为步长递增，绘制一条曲线经过点1到达2,然后经过点2到达点4,再经过点5到达点6,最后经过点7到达点8.循环在点8结束，而它恰好是最后一个点。至少包含三个点，而且点的个数必须为奇数
+
+<pre>
+  'use strict';
+
+  window.onload = () => {
+    let canvas = document.querySelector('#canvas'),
+        context = canvas.getContext('2d'),
+        number = 10,
+        points = [];
+    for (let i = 0; i < number; i++) {
+      let point = {
+        x : Math.random() * canvas.width,
+        y : Math.random() * canvas.height
+      };
+
+      points.push(point);
+    }
+
+    context.beginPath();
+    context.moveTo(points[0].x, points[0].y);
+
+    for (let i = 1; i < number; i += 2) {
+      context.quadraticCurveTo(points[i].x, points[i].y, points[i + 1].x, points[i + 1].y);
+      context.stroke();
+    }
+
+  }
+</pre>
+
+> 方法二：上述方法创建的线条不像是一条平滑的曲线，必须插入一些更多的点让它看上去更像曲线，方法如下：在每两个点之间，加入一个切好位于他们中间的新点，并使用他们作为每条曲线的起点和终点，而将原始点作为曲线的控制点，代码如下：
+
+<pre>
+  'use strict';
+
+  window.onload = () => {
+    let canvas = document.querySelector('#canvas'),
+        context = canvas.getContext('2d'),
+        number = 10,
+        points = [];
+    for (let i = 0; i < number; i++) {
+      let point = {
+        x : Math.random() * canvas.width,
+        y : Math.random() * canvas.height
+      };
+
+      points.push(point);
+    }
+
+    context.beginPath();
+    context.moveTo(points[0].x, points[0].y);
+
+    for (var i = 1; i < number - 2; i++) {
+      let x = (points[i].x + points[i + 1].x) / 2,
+          y = (points[i].y + points[i + 1].y) / 2;
+      context.quadraticCurveTo(points[i].x, points[i].y, x, y);
+      context.stroke();
+    }
+
+    context.quadraticCurveTo(points[i].x, points[i].y, points[i + 1].x, points[i + 1].y);
+    context.stroke();
+  }
+</pre>
