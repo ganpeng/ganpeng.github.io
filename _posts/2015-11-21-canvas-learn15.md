@@ -189,3 +189,76 @@ context.arc(100, 100, 50, 0, Math.PI * 2, true);
 context.closePath();
 context.stroke();
 </pre>
+
+### 渐变
+
+> canvas支持的渐变方式：
+
+> 线性渐变： context.createLinearGradient(x0, y0, x1, y1);
+
+> 放射性渐变： context.createRadialGradient(x0, y0, r0, x1, y1, r1);
+
+> 设置渐变颜色 ： gradient.Gradient.addColorStop(ratio, color);
+
+> 实例1：
+<pre>
+  'use strict';
+
+  window.onload = () => {
+    let canvas = document.querySelector('#canvas'),
+        context = canvas.getContext('2d'),
+        pt1 = {
+          x : 0,
+          y : 0
+        },
+        pt2 = {
+          x : 100,
+          y : 100
+        },
+        gradient = context.createLinearGradient(pt1.x, pt1.y, pt2.x, pt2.y);
+
+
+        gradient.addColorStop(0, '#ffffff');
+        gradient.addColorStop(1, '#ff0000');
+
+        context.fillStyle = gradient;
+        context.fillRect(0, 0, 100, 100);
+  }
+</pre>
+
+> 实例2：
+
+<pre>
+  'use strict';
+
+  window.onload = () => {
+    let canvas = document.querySelector('#canvas'),
+        context = canvas.getContext('2d'),
+        c1 = {
+          x : 150,
+          y : 150,
+          r : 0
+        },
+        c2 = {
+          x : 150,
+          y : 150,
+          r : 50
+        },
+        gradient = context.createRadialGradient(c1.x, c1.y, c1.r, c2.x, c2.y, c2.r);
+
+
+        gradient.addColorStop(0, '#ffffff');
+        gradient.addColorStop(1, '#ff0000');
+
+        context.fillStyle = gradient;
+        context.fillRect(100, 100, 100, 100);
+  }
+</pre>
+
+#### 加载并绘制图像
+
+> context.drawImage方法将图片绘制到canvas元素上，该方法接收一个图片元素与canvas上的一个x, y坐标
+
+> drawImage(image, dx, dy)在canvas的(dx, dy)坐标上绘制一张图片，(dx, dy)是图片左上角所在的位置;
+
+> 
