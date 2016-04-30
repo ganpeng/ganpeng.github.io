@@ -178,3 +178,14 @@ tags: [javascript]
   context.stroke();
   }
 </pre>
+
+#### 绘制一个圆形
+
+> arc(x, y, radius, startAngle, endAngle, [, antiClockwise]) : 为连接到前一个点的直线路径添加一个弧度，该弧度将是以x,y作圆心，以radius为半径的一个圆的一部分，该部分的起始角度和终止角度分别由startAngle和endAngle指定。
+
+<pre>
+context.beginPath();
+context.arc(100, 100, 50, 0, Math.PI * 2, true);
+context.closePath();
+context.stroke();
+</pre>
