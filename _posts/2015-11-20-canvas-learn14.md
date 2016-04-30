@@ -46,3 +46,31 @@ tags: [javascript]
 </pre>
 
 > 上述代码表示，在canavs上画一条从左上角(0, 0)到(100, 100)的直线，在画完一条线后，这条线的终点将自动成为下一条线的起点，或者可以用context.moveTo方法为下一条线指定一个新的起点
+
+<pre>
+  'use strict';
+
+  window.onload = () => {
+    let canvas = document.querySelector('#canvas'),
+        context = canvas.getContext('2d'),
+        mouse = utils.captureMouse(canvas);
+
+    function mouseMoveHandle(e) {
+      context.lineTo(mouse.x, mouse.y);
+      context.stroke();
+    }
+
+    canvas.addEventListener('mousedown', (e) => {
+      context.beginPath();
+      context.moveTo(mouse.x, mouse.y);
+
+      canvas.addEventListener('mousemove', mouseMoveHandle, false);
+    }, false);
+
+    canvas.addEventListener('mouseup', (e) => {
+      canvas.removeEventListener('mousemove', mouseMoveHandle, false);
+    })
+  }
+</pre>
+
+> 上述例子为一个简单的绘图APi，用户每次在canvas元素上按下鼠标键都会触发Mousedown事件的处理程序，而这也是用户想在鼠标的当前位置开始画线的时候，事件处理程序会创建一条新的路径并通过调用context.moveTo方法将虚拟的绘图笔移动到鼠标所在的位置，随后它将为mousemove添加事件监听器，这样，用户每次移动鼠标的时候，mouseMoveHandle函数都会被调用，他会绘制一条到当前的鼠标位置的直线，并将路径轮廓渲染到canvas上，最后，还有一个mouseup事件的处理程序，起会移除mousemove事件处理程序，这样当鼠标释放后，就不再会有线条绘制到canvas上了。
