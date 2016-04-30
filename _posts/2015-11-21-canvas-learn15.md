@@ -1,4 +1,4 @@
----
+-n--
 layout: post
 title:  canvas-learn-15
 tags: [javascript]
@@ -259,6 +259,24 @@ context.stroke();
 
 > context.drawImage方法将图片绘制到canvas元素上，该方法接收一个图片元素与canvas上的一个x, y坐标
 
-> drawImage(image, dx, dy)在canvas的(dx, dy)坐标上绘制一张图片，(dx, dy)是图片左上角所在的位置;
+> drawImage(image, dx, dy):在canvas的(dx, dy)坐标上绘制一张图片，(dx, dy)是图片左上角所在的位置;
 
-> 
+> drawImage(image, dx, dy, dw, dh): 分别根据dw,dh的值设定图片的宽度和高度，并将其绘制在canvas上的(dx, dy)坐标;
+
+> drawImage(image, sx, sy, sw, sh, dx, dy, dw, dh): 将图片裁剪到矩形区域(sx, sy, sw, sh)中，并缩放至(dh, dw), 再将其绘制到(dx, dy)坐标;
+
+<pre>
+  'use strict';
+
+  window.onload = () => {
+    let canvas = document.querySelector('#canvas'),
+        context = canvas.getContext('2d'),
+        img = new Image();
+
+        img.onload = () => {
+          context.drawImage(img, 0, 0);
+        };
+
+        img.src = 'http://www.sanguosha.com/images/23/123/1107/26/73/9779_10133273.PNG';
+  }
+</pre>
