@@ -1,7 +1,7 @@
 ---
 layout: post
 title:	canvas-learn-10
-tags: [javascript]
+tags: [canvas]
 ---
 
 <h1 style="text-align:center;">使用绘图API产生的波</h1>

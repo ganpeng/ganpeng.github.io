@@ -1,7 +1,7 @@
 ---
 layout: post
 title:	canvas-learn-8
-tags: [javascript]
+tags: [canvas]
 ---
 
 <h1 style="text-align:center;">脉冲运动</h1>

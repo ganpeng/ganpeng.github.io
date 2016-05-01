@@ -1,7 +1,7 @@
 ---
 layout: post
 title:	canvas-learn-3
-tags: [javascript]
+tags: [canvas]
 ---
 
 <h1 style="text-align:center;">用户交互</h1>

@@ -1,7 +1,7 @@
 ---
 layout: post
 title:	canvas-learn-12
-tags: [javascript]
+tags: [canvas]
 ---
 
 <h1 style="text-align:center;">椭圆运动</h1>

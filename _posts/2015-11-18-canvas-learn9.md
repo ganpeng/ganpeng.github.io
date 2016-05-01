@@ -1,7 +1,7 @@
 ---
 layout: post
 title:	canvas-learn-9
-tags: [javascript]
+tags: [canvas]
 ---
 
 <h1 style="text-align:center;">使用两个角产生正弦波</h1>

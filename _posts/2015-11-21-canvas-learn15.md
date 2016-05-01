@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  canvas-learn-15
-tags: [javascript]
+tags: [canvas]
 ---
 
 <h1 style="text-align:center;">使用quadraticCurveTo绘制曲线</h1>

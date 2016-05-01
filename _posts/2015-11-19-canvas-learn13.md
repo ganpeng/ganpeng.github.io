@@ -1,7 +1,7 @@
 ---
 layout: post
 title:	canvas-learn-13
-tags: [javascript]
+tags: [canvas]
 ---
 
 <h1 style="text-align:center;">两点之间的距离</h1>

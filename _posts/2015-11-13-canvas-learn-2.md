@@ -1,7 +1,7 @@
 ---
 layout: post
 title:	canvas-learn-2
-tags: [javascript]
+tags: [canvas]
 ---
 
 <h1 style="text-align:center;">动画的javascript基础</h1>
