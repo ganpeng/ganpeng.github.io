@@ -16,7 +16,7 @@ description:      >
 
 # The tags listed as entries in the sidebar
 # sidebar_tags:     [jekyll, hyde]
-sidebar_tags:     [index, html, css, javascript, nodeJS]
+sidebar_tags:     [html, css, javascript, nodeJS, canvas, animation]
 
 # Fallback image and color if not overwritten for tag or post
 # image:            /hydejack/public/img/nap.jpg

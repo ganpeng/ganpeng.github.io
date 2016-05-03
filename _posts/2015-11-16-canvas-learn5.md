@@ -1,7 +1,7 @@
 ---
 layout: post
 title:	canvas-learn-5
-tags: [javascript]
+tags: [canvas]
 ---
 
 <h1 style="text-align:center;">旋转</h1>

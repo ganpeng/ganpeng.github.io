@@ -1,7 +1,7 @@
 ---
 layout: post
 title:	canvas-learn-11
-tags: [javascript]
+tags: [canvas]
 ---
 
 <h1 style="text-align:center;">圆与椭圆</h1>

@@ -1,7 +1,7 @@
 ---
 layout: post
 title:	canvas-learn-6
-tags: [javascript]
+tags: [canvas]
 ---
 
 <h1 style="text-align:center;">波</h1>

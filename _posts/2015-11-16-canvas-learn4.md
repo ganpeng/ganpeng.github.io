@@ -1,7 +1,7 @@
 ---
 layout: post
 title:	canvas-learn-4
-tags: [javascript]
+tags: [canvas]
 ---
 
 <h1 style="text-align:center;">动画中的三角学基础</h1>
