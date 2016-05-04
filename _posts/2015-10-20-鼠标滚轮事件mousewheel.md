@@ -60,3 +60,75 @@ if (status) {
 } else {
     // 此处为向下滚动时要执行的处理
 }
+
+### 注意事项
+
+> 当鼠标滚轮事件的目标元素的父元素的高度过高，出现滚动条是，如果在目标元素是执行滚动操作的时候，会触发滚动事件的默认行为，所以此处应该阻止其滚动事件的默认行为；
+
+> 可以使用 return false 来阻止默认行为，也可以使用 event.preventdefault()来阻止默认行为
+> 他们两者之间的区别是，return false 只能阻止 obj.on事件名称 = eventHandle,这种形式的事件绑定；而通过addEventListener绑定的事件则需要通过event下面的preventDefault()来阻止默认行为
+
+<pre>
+    document.oncontextMenu = (e) => { // 鼠标右键菜单的事件
+        return false;  // 因为是on+事件名称 = 处理函数 形式的事件绑定，所以可以使用return false来阻止默认事件的行为
+    }
+
+    document.addEventListener('contextmenu', (e) => {
+        // return false; // 但是此时是使用了addEventListener的事件绑定，所以return false不能阻止事件的默认行为
+        e.preventDefault(); // 只能使用这种方法 
+    }, false); 
+</pre>
+
+#### 完整示例代码
+
+<pre>
+    'use strict';
+
+    window.onload = () => {
+        let obj = document.querySelector('#div'),   
+            status = null; // 如果status为true，则为向上滚动，如果为false, 则为向下滚动
+
+        // obj.addEventListener('mousewheel', mousewheelHandle, false);
+
+        obj.onmousewheel = mousewheelHandle;
+
+        if (obj.addEventListener) {
+            obj.addEventListener('DOMMouseScroll', mousewheelHandle, false);
+        }
+
+        function mousewheelHandle(e) {
+            let event = e || window.e;
+            /*
+                ie/chrome  event.wheelDelta  上 ： -3， 下 ： 3；
+
+                firefox  event.detail 上 ： 1， 下 ： -1；
+             */
+
+            if (event.wheelDelta) {
+                status = event.wheelDelta < 0 ? true : false;
+            } else {
+                status = event.detail > 0 ? true : false;
+            }
+
+            if(status) {
+                this.style.height = this.offsetHeight - 1 + 'px';
+            } else {
+                this.style.height = this.offsetHeight + 1 + 'px';
+            }
+
+            if (event.preventDefault) {
+                event.preventDefault();
+            }
+            return false;
+        }
+
+        // document.oncontextmenu = (e) => {
+        //  return false;
+        // }    
+
+        document.addEventListener('contextmenu', (e) => {
+            // return false;
+            e.preventDefault();
+        }, false);
+    }   
+</pre>
